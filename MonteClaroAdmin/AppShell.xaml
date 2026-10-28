@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:MonteClaroAdmin.Views"
+       x:Class="MonteClaroAdmin.AppShell"
+       Shell.BackgroundColor="#15362F"
+       Shell.ForegroundColor="White"
+       Shell.TitleColor="White"
+       Shell.TabBarForegroundColor="White"
+       Shell.TabBarBackgroundColor="#15362F">
+
+    <FlyoutItem Title="Dashboard" FlyoutIcon="dotnet_bot.png">
+        <ShellContent Title="Resumen" ContentTemplate="{DataTemplate views:DashboardPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Inventario" FlyoutIcon="dotnet_bot.png">
+        <ShellContent Title="Inventario" ContentTemplate="{DataTemplate views:InventoryPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Recepciones" FlyoutIcon="dotnet_bot.png">
+        <ShellContent Title="Recepciones" ContentTemplate="{DataTemplate views:ReceiptsPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Ventas" FlyoutIcon="dotnet_bot.png">
+        <ShellContent Title="Ventas" ContentTemplate="{DataTemplate views:SalesPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Empleados" FlyoutIcon="dotnet_bot.png">
+        <ShellContent Title="Empleados" ContentTemplate="{DataTemplate views:EmployeesPage}" />
+    </FlyoutItem>
+</Shell>

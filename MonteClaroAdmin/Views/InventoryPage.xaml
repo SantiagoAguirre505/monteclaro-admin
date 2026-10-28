@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MonteClaroAdmin.Views.InventoryPage"
+             BackgroundColor="#F4F0EB">
+    <VerticalStackLayout Padding="24" Spacing="18">
+        <Label Text="Inventario" FontSize="32" FontAttributes="Bold" TextColor="#1E4039" />
+        <Label Text="Control de stock y materiales del aserradero" FontSize="14" TextColor="#5F756E" />
+
+        <CollectionView ItemsSource="{Binding Inventory}" SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Stroke="#D7D0C8" StrokeThickness="1" Padding="16,12" Margin="0,0,0,10" BackgroundColor="#F8F5F1">
+                        <Grid ColumnDefinitions="2*,1.2*,1*,1*">
+                            <VerticalStackLayout>
+                                <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="16" />
+                                <Label Text="{Binding Category}" FontSize="12" TextColor="#5F756E" />
+                            </VerticalStackLayout>
+                            <Label Grid.Column="1" Text="{Binding Stock, StringFormat='{0} u'}" FontSize="14" VerticalTextAlignment="Center" />
+                            <Label Grid.Column="2" Text="{Binding Location}" FontSize="12" VerticalTextAlignment="Center" />
+                            <Label Grid.Column="3" Text="{Binding Price, StringFormat='${0:N0}'}" FontSize="14" FontAttributes="Bold" VerticalTextAlignment="Center" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
